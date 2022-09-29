@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const PostDetail = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const [post, setPost] = useState({});
 
   async function fetchData() {
@@ -18,6 +19,14 @@ const PostDetail = () => {
     const post = await response.json();
 
     setPost(post);
+  }
+
+  async function deletePost(id) {
+    await fetch(`http://localhost:5500/posts/${id}`, {
+      method: "DELETE",
+    });
+
+    navigate("/posts");
   }
 
   useEffect(() => {
@@ -69,7 +78,12 @@ const PostDetail = () => {
           Edit
         </a>
 
-        <button className="btn btn-primary">Delete</button>
+        <button
+          className="btn btn-primary"
+          onClick={() => deletePost(post._id)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
