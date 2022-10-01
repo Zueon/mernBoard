@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const moment = require("moment");
-const date = new Date();
 
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
