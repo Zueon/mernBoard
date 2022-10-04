@@ -14,6 +14,7 @@ app.use(express.json()); // 리퀘스트 바디의 json을 해석
 
 // route config
 app.use("/posts", require("./routes/posts"));
+app.use("/users", require("./routes/users"));
 
 // connect to mongoDB server
 mongoose.connect(ATLAS_URI).then(() => {

@@ -31,6 +31,18 @@ const Nav = () => {
               </a>
             </li>
           </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/users" class="nav-link">
+                Users
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/users/new" class="nav-link">
+                Sign Up
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

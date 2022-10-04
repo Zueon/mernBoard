@@ -3,10 +3,11 @@ import Nav from "./components/Nav";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import { Route, Routes } from "react-router-dom";
-import PostList from "./routes/PostList";
-import PostDetail from "./routes/PostDetail";
-import Edit from "./routes/Edit";
-import New from "./routes/New";
+import PostList from "./routes/posts/PostList";
+import PostDetail from "./routes/posts/PostDetail";
+import Edit from "./routes/posts/Edit";
+import New from "./routes/posts/New";
+import Signup from "./routes/users/Signup";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/posts/:id" element={<PostDetail />} />
         <Route path="/posts/:id/edit" element={<Edit />} />
         <Route path="/posts/new" element={<New />} />
+        <Route path="/users/new" element={<Signup />} />
       </Routes>
     </div>
   );
